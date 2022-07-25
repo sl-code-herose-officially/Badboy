@@ -110,7 +110,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
         console.log(
             chalk.blueBright.italic('⬇️ Installing external plugins...')
         );
-
+        
         var plugins = await plugindb.PluginDB.findAll();
         plugins.map(async (plugin) => {
             if (!fs.existsSync('./plugins/' + plugin.dataValues.name + '.js')) {
@@ -134,7 +134,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
         });
 
         console.log(
-            chalk.green.bold('Pinky bot working perfectly 👻')
+            chalk.green.bold('King-YS-Bot working perfectly 👻')
         );
     });
     
@@ -203,8 +203,6 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                         if (command.onlyPinned && chat.pin === undefined) return;
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
-                    }
-                    
                     else if ((config.MAHN !== false && msg.key.fromMe === false && command.fromMe === true &&
                         (msg.participant && config.MAHN.includes(',') ? config.MAHN.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.MAHN || config.MAHN.includes(',') ? config.MAHN.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.MAHN)
                     ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
@@ -246,7 +244,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                                     'Gerçekleşen Hata: ' + error + '\n\n'
                                     , MessageType.text);
                             } else {
-                                await conn.sendMessage(conn.user.jid, 'PINKYBOT_🐱_[error] ' +
+                                await conn.sendMessage(conn.user.jid, 'King-YS-Bot_🐱_[error] ' +
                                     '\n\n*👻 ' + error + '*\n'
                                     , MessageType.text);
                             }
